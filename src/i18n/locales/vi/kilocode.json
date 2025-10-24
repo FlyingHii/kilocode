@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "Không thể hiển thị các thay đổi mới, điểm kiểm tra không khả dụng.",
 		"noChanges": "Không thể hiển thị các thay đổi mới, không tìm thấy thay đổi nào.",
 		"error": "Không thể hiển thị các thay đổi mới, đã xảy ra lỗi."
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "Tập tin '{{filePath}}' không tồn tại trong không gian làm việc.",
+			"tabNotFound": "Tab cho tệp '{{filePath}}' hiện không mở.",
+			"invalidJsonFiles": "Định dạng JSON không hợp lệ trong tham số 'files': {{error}}",
+			"lineOutOfRange": "Số dòng {{lineNumber}} nằm ngoài phạm vi cho tệp '{{filePath}}' (tối đa: {{maxLines}}).",
+			"openRequiresFile": "Hành động 'open' yêu cầu tham số 'file' hoặc 'files'.",
+			"closeRequiresFile": "Hành động 'close' yêu cầu tham số 'file'."
+		},
+		"success": {
+			"openedFile": "✓ Đã mở: {{filePath}}",
+			"closedTab": "✓ Đã đóng tab: {{filePath}}",
+			"openedFileWithLine": "✓ Đã mở: {{filePath}} (dòng {{lineNumber}})",
+			"bulkOpenApproval": "Mở {{count}} tệp trong các tab: {{fileList}}"
+		}
 	}
 }

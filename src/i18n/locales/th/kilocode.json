@@ -135,5 +135,21 @@
 			"cancelButton": "ยกเลิก"
 		},
 		"tipMessage": "Kilo: กด {{shortcut}} เพื่อสร้างคำสั่งเทอร์มินัล"
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "ไฟล์ '{{filePath}}' ไม่มีอยู่ในพื้นที่ทำงาน",
+			"invalidJsonFiles": "รูปแบบ JSON ไม่ถูกต้องในพารามิเตอร์ 'files': {{error}}",
+			"tabNotFound": "แท็บสำหรับไฟล์ '{{filePath}}' ไม่ได้เปิดอยู่ในขณะนี้",
+			"openRequiresFile": "การกระทำ 'open' ต้องการพารามิเตอร์ 'file' หรือ 'files'",
+			"closeRequiresFile": "การกระทำ 'close' ต้องการพารามิเตอร์ 'file'",
+			"lineOutOfRange": "บรรทัดที่ {{lineNumber}} อยู่นอกช่วงสำหรับไฟล์ '{{filePath}}' (สูงสุด: {{maxLines}})"
+		},
+		"success": {
+			"openedFile": "✓ เปิดแล้ว: {{filePath}}",
+			"openedFileWithLine": "✓ เปิดแล้ว: {{filePath}} (บรรทัด {{lineNumber}})",
+			"closedTab": "✓ ปิดแท็บ: {{filePath}}",
+			"bulkOpenApproval": "เปิด {{count}} ไฟล์ในแท็บ: {{fileList}}"
+		}
 	}
 }

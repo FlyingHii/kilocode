@@ -135,5 +135,21 @@
 			"cancelButton": "Anuluj"
 		},
 		"tipMessage": "Kilo: Naciśnij {{shortcut}}, aby wygenerować polecenia terminala"
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "Plik '{{filePath}}' nie istnieje w obszarze roboczym.",
+			"lineOutOfRange": "Wiersz numer {{lineNumber}} jest poza zakresem dla pliku '{{filePath}}' (maks.: {{maxLines}}).",
+			"tabNotFound": "Karta dla pliku '{{filePath}}' nie jest obecnie otwarta.",
+			"openRequiresFile": "Akcja 'open' wymaga parametru 'file' lub 'files'.",
+			"closeRequiresFile": "Akcja 'close' wymaga parametru 'file'.",
+			"invalidJsonFiles": "Nieprawidłowy format JSON w parametrze 'files': {{error}}"
+		},
+		"success": {
+			"openedFileWithLine": "✓ Otwarto: {{filePath}} (linia {{lineNumber}})",
+			"closedTab": "✓ Zamknięto kartę: {{filePath}}",
+			"openedFile": "✓ Otwarto: {{filePath}}",
+			"bulkOpenApproval": "Otwórz {{count}} pliki w kartach: {{fileList}}"
+		}
 	}
 }

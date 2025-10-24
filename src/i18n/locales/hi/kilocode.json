@@ -135,5 +135,21 @@
 			"cancelButton": "रद्द करें"
 		},
 		"tipMessage": "Kilo: टर्मिनल कमांड उत्पन्न करने के लिए {{shortcut}} दबाएँ"
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "फ़ाइल '{{filePath}}' कार्यक्षेत्र में मौजूद नहीं है।",
+			"tabNotFound": "फ़ाइल '{{filePath}}' के लिए टैब वर्तमान में खुला नहीं है।",
+			"invalidJsonFiles": "'files' पैरामीटर में अमान्य JSON प्रारूप: {{error}}",
+			"lineOutOfRange": "पंक्ति संख्या {{lineNumber}} फ़ाइल '{{filePath}}' की सीमा से बाहर है (अधिकतम: {{maxLines}})।",
+			"openRequiresFile": "क्रिया 'open' के लिए या तो 'file' या 'files' पैरामीटर की आवश्यकता है।",
+			"closeRequiresFile": "कार्रवाई 'close' के लिए 'file' पैरामीटर आवश्यक है।"
+		},
+		"success": {
+			"openedFile": "✓ खोली गई: {{filePath}}",
+			"openedFileWithLine": "✓ खोला गया: {{filePath}} (पंक्ति {{lineNumber}})",
+			"closedTab": "✓ बंद किया गया टैब: {{filePath}}",
+			"bulkOpenApproval": "{{count}} फ़ाइलों को टैब में खोलें: {{fileList}}"
+		}
 	}
 }

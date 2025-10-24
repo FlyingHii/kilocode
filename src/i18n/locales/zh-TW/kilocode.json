@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "無法顯示新變更，檢查點不可用。",
 		"noChanges": "無法顯示新變更，找不到任何變更。",
 		"error": "無法顯示新變更，發生錯誤。"
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "工作区中不存在文件'{{filePath}}'。",
+			"tabNotFound": "文件'{{filePath}}'的选项卡当前未打开。",
+			"invalidJsonFiles": "'files' 参数中的 JSON 格式无效：{{error}}",
+			"closeRequiresFile": "操作\"close\"需要\"file\"参数。",
+			"lineOutOfRange": "文件'{{filePath}}'中的行号 {{lineNumber}} 超出范围（最大值：{{maxLines}}）。",
+			"openRequiresFile": "操作\"open\"需要\"file\"或\"files\"参数。"
+		},
+		"success": {
+			"openedFile": "✓ 已打开：{{filePath}}",
+			"openedFileWithLine": "✓ 已打开：{{filePath}}（第 {{lineNumber}} 行）",
+			"bulkOpenApproval": "在标签页中打开 {{count}} 个文件：{{fileList}}",
+			"closedTab": "✓ 已关闭标签页：{{filePath}}"
+		}
 	}
 }

@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "Impossibile mostrare le nuove modifiche, i checkpoint non sono disponibili.",
 		"noChanges": "Impossibile mostrare le nuove modifiche, nessuna modifica trovata.",
 		"error": "Impossibile mostrare le nuove modifiche, si è verificato un errore."
+	},
+	"manageTabs": {
+		"errors": {
+			"tabNotFound": "La scheda per il file '{{filePath}}' non è attualmente aperta.",
+			"invalidJsonFiles": "Formato JSON non valido nel parametro 'files': {{error}}",
+			"lineOutOfRange": "La riga numero {{lineNumber}} è fuori limite per il file '{{filePath}}' (max: {{maxLines}}).",
+			"fileNotFound": "Il file '{{filePath}}' non esiste nell'area di lavoro.",
+			"closeRequiresFile": "L'azione 'close' richiede il parametro 'file'.",
+			"openRequiresFile": "L'azione 'open' richiede il parametro 'file' o 'files'."
+		},
+		"success": {
+			"openedFile": "✓ Aperto: {{filePath}}",
+			"openedFileWithLine": "✓ Aperto: {{filePath}} (riga {{lineNumber}})",
+			"closedTab": "✓ Scheda chiusa: {{filePath}}",
+			"bulkOpenApproval": "Apri {{count}} file nelle schede: {{fileList}}"
+		}
 	}
 }

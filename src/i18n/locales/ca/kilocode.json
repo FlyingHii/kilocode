@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "No es poden mostrar canvis nous, els punts de control no estan disponibles.",
 		"noChanges": "No es poden mostrar canvis nous, no s'han trobat canvis.",
 		"error": "No es poden mostrar canvis nous, s'ha produït un error."
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "El fitxer '{{filePath}}' no existeix a l'espai de treball.",
+			"tabNotFound": "La pestanya per l'arxiu '{{filePath}}' no està oberta actualment.",
+			"lineOutOfRange": "La línia número {{lineNumber}} està fora de l'interval per al fitxer '{{filePath}}' (màx: {{maxLines}}).",
+			"invalidJsonFiles": "Format JSON no vàlid en el paràmetre 'files': {{error}}",
+			"openRequiresFile": "L'acció 'open' requereix el paràmetre 'file' o 'files'.",
+			"closeRequiresFile": "L'acció 'close' requereix el paràmetre 'file'."
+		},
+		"success": {
+			"openedFile": "✓ Obert: {{filePath}}",
+			"openedFileWithLine": "✓ Obert: {{filePath}} (línia {{lineNumber}})",
+			"closedTab": "✓ Pestanya tancada: {{filePath}}",
+			"bulkOpenApproval": "Obre {{count}} fitxers en pestanyes: {{fileList}}"
+		}
 	}
 }

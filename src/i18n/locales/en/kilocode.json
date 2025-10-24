@@ -135,5 +135,21 @@
 			"okButton": "I Understand",
 			"cancelButton": "Cancel"
 		}
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "File '{{filePath}}' does not exist in the workspace.",
+			"tabNotFound": "Tab for file '{{filePath}}' is not currently open.",
+			"lineOutOfRange": "Line number {{lineNumber}} is out of range for file '{{filePath}}' (max: {{maxLines}}).",
+			"invalidJsonFiles": "Invalid JSON format in 'files' parameter: {{error}}",
+			"openRequiresFile": "Action 'open' requires either 'file' or 'files' parameter.",
+			"closeRequiresFile": "Action 'close' requires 'file' parameter."
+		},
+		"success": {
+			"openedFile": "✓ Opened: {{filePath}}",
+			"openedFileWithLine": "✓ Opened: {{filePath}} (line {{lineNumber}})",
+			"closedTab": "✓ Closed tab: {{filePath}}",
+			"bulkOpenApproval": "Open {{count}} files in tabs: {{fileList}}"
+		}
 	}
 }

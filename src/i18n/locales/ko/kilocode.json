@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "새로운 변경사항을 표시할 수 없습니다. 체크포인트를 사용할 수 없습니다.",
 		"noChanges": "새로운 변경사항을 표시할 수 없습니다. 변경사항이 없습니다.",
 		"error": "새로운 변경사항을 표시할 수 없습니다. 오류가 발생했습니다."
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "파일 '{{filePath}}'이(가) 작업 공간에 존재하지 않습니다.",
+			"tabNotFound": "'{{filePath}}' 파일의 탭이 현재 열려있지 않습니다.",
+			"lineOutOfRange": "줄 번호 {{lineNumber}}는 '{{filePath}}' 파일의 범위를 벗어났습니다 (최대: {{maxLines}}).",
+			"invalidJsonFiles": "'files' 매개변수에 잘못된 JSON 형식: {{error}}",
+			"closeRequiresFile": "'닫기' 작업에는 'file' 매개변수가 필요합니다.",
+			"openRequiresFile": "'open' 작업은 'file' 또는 'files' 매개변수가 필요합니다."
+		},
+		"success": {
+			"openedFile": "✓ 열림: {{filePath}}",
+			"openedFileWithLine": "✓ 열림: {{filePath}} ({{lineNumber}}줄)",
+			"closedTab": "✓ 닫힌 탭: {{filePath}}",
+			"bulkOpenApproval": "{{count}}개의 파일을 탭에서 열기: {{fileList}}"
+		}
 	}
 }

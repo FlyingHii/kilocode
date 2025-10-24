@@ -31,6 +31,9 @@ import { getCodebaseSearchDescription } from "./codebase-search"
 import { getUpdateTodoListDescription } from "./update-todo-list"
 import { getRunSlashCommandDescription } from "./run-slash-command"
 import { getGenerateImageDescription } from "./generate-image"
+// kilocode_change start: Add manage_tabs tool
+import { getManageTabsDescription } from "./manage-tabs"
+// kilocode_change end
 import { CodeIndexManager } from "../../../services/code-index/manager"
 
 // kilocode_change start: Morph fast apply
@@ -71,6 +74,7 @@ const toolDescriptionMap: Record<string, (args: ToolArgs) => string | undefined>
 	update_todo_list: (args) => getUpdateTodoListDescription(args),
 	run_slash_command: () => getRunSlashCommandDescription(),
 	generate_image: (args) => getGenerateImageDescription(args),
+	manage_tabs: (args) => getManageTabsDescription(args),
 }
 
 export function getToolDescriptionsForMode(

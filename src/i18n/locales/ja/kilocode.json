@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "新しい変更を表示できません。チェックポイントが利用できません。",
 		"noChanges": "新しい変更を表示できません。変更が見つかりませんでした。",
 		"error": "新しい変更を表示できません。エラーが発生しました。"
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "ファイル '{{filePath}}' はワークスペースに存在しません。",
+			"tabNotFound": "ファイル '{{filePath}}' のタブは現在開かれていません。",
+			"lineOutOfRange": "行番号 {{lineNumber}} はファイル '{{filePath}}' の範囲外です（最大: {{maxLines}}）。",
+			"invalidJsonFiles": "'files' パラメータのJSONフォーマットが無効です：{{error}}",
+			"openRequiresFile": "アクション 'open' には 'file' または 'files' パラメータのいずれかが必要です。",
+			"closeRequiresFile": "アクション「close」は「file」パラメータが必要です。"
+		},
+		"success": {
+			"openedFile": "✓ 開かれました: {{filePath}}",
+			"openedFileWithLine": "✓ 開かれました: {{filePath}} (行 {{lineNumber}})",
+			"closedTab": "✓ タブを閉じました: {{filePath}}",
+			"bulkOpenApproval": "{{count}}個のファイルをタブで開く: {{fileList}}"
+		}
 	}
 }

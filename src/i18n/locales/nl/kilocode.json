@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "Kan nieuwe wijzigingen niet weergeven, controlepunten zijn niet beschikbaar.",
 		"noChanges": "Kan nieuwe wijzigingen niet weergeven, er zijn geen wijzigingen gevonden.",
 		"error": "Kan nieuwe wijzigingen niet weergeven, er is een fout opgetreden."
+	},
+	"manageTabs": {
+		"errors": {
+			"tabNotFound": "Tabblad voor bestand '{{filePath}}' is momenteel niet geopend.",
+			"fileNotFound": "Bestand '{{filePath}}' bestaat niet in de werkruimte.",
+			"invalidJsonFiles": "Ongeldig JSON-formaat in parameter 'files': {{error}}",
+			"lineOutOfRange": "Regelnummer {{lineNumber}} valt buiten het bereik van bestand '{{filePath}}' (max: {{maxLines}}).",
+			"openRequiresFile": "Actie 'open' vereist een 'file'- of 'files'-parameter.",
+			"closeRequiresFile": "Actie 'close' vereist 'file' parameter."
+		},
+		"success": {
+			"openedFile": "✓ Geopend: {{filePath}}",
+			"openedFileWithLine": "✓ Geopend: {{filePath}} (regel {{lineNumber}})",
+			"bulkOpenApproval": "Open {{count}} bestanden in tabbladen: {{fileList}}",
+			"closedTab": "✓ Tabblad gesloten: {{filePath}}"
+		}
 	}
 }

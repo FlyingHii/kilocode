@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "Impossible d'afficher les nouveaux changements, les points de contrôle ne sont pas disponibles.",
 		"noChanges": "Impossible d'afficher les nouveaux changements, aucun changement trouvé.",
 		"error": "Impossible d'afficher les nouveaux changements, une erreur s'est produite."
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "Le fichier '{{filePath}}' n'existe pas dans l'espace de travail.",
+			"tabNotFound": "L'onglet pour le fichier '{{filePath}}' n'est pas actuellement ouvert.",
+			"lineOutOfRange": "La ligne numéro {{lineNumber}} est hors limites pour le fichier '{{filePath}}' (max: {{maxLines}}).",
+			"invalidJsonFiles": "Format JSON invalide dans le paramètre 'files' : {{error}}",
+			"closeRequiresFile": "L'action 'close' nécessite le paramètre 'file'.",
+			"openRequiresFile": "L'action 'open' nécessite soit le paramètre 'file', soit le paramètre 'files'."
+		},
+		"success": {
+			"openedFile": "✓ Ouvert : {{filePath}}",
+			"openedFileWithLine": "✓ Ouvert : {{filePath}} (ligne {{lineNumber}})",
+			"closedTab": "✓ Onglet fermé : {{filePath}}",
+			"bulkOpenApproval": "Ouvrir {{count}} fichiers dans des onglets : {{fileList}}"
+		}
 	}
 }

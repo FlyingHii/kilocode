@@ -135,5 +135,21 @@
 			"cancelButton": "Zrušit"
 		},
 		"tipMessage": "Kilo: Stiskněte {{shortcut}} pro generování příkazů v terminálu"
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "Soubor '{{filePath}}' v pracovním prostoru neexistuje.",
+			"tabNotFound": "Karta pro soubor '{{filePath}}' není aktuálně otevřena.",
+			"lineOutOfRange": "Číslo řádku {{lineNumber}} je mimo rozsah souboru '{{filePath}}' (maximum: {{maxLines}}).",
+			"invalidJsonFiles": "Neplatný formát JSON v parametru 'files': {{error}}",
+			"openRequiresFile": "Akce 'open' vyžaduje buď parametr 'file' nebo 'files'.",
+			"closeRequiresFile": "Akce 'close' vyžaduje parametr 'file'."
+		},
+		"success": {
+			"bulkOpenApproval": "Otevřít {{count}} souborů v záložkách: {{fileList}}",
+			"openedFile": "✓ Otevřeno: {{filePath}}",
+			"openedFileWithLine": "✓ Otevřeno: {{filePath}} (řádek {{lineNumber}})",
+			"closedTab": "✓ Zavřená karta: {{filePath}}"
+		}
 	}
 }

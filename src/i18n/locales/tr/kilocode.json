@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "Yeni değişiklikler gösterilemiyor, kontrol noktaları kullanılamıyor.",
 		"noChanges": "Yeni değişiklikler gösterilemiyor, hiçbir değişiklik bulunamadı.",
 		"error": "Yeni değişiklikler gösterilemiyor, bir hata oluştu."
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "Dosya '{{filePath}}' çalışma alanında bulunmuyor.",
+			"tabNotFound": "'{{filePath}}' dosyası için sekme şu anda açık değil.",
+			"openRequiresFile": "'open' eylemi, 'file' veya 'files' parametrelerinden birini gerektirir.",
+			"invalidJsonFiles": "'files' parametresinde geçersiz JSON formatı: {{error}}",
+			"closeRequiresFile": "'kapat' eylemi 'dosya' parametresi gerektirir.",
+			"lineOutOfRange": "{{filePath}} dosyasının {{lineNumber}} satır numarası kapsam dışıdır (maksimum: {{maxLines}})."
+		},
+		"success": {
+			"openedFile": "✓ Açıldı: {{filePath}}",
+			"closedTab": "✓ Sekme kapatıldı: {{filePath}}",
+			"bulkOpenApproval": "{{count}} dosyayı sekmelerde aç: {{fileList}}",
+			"openedFileWithLine": "✓ Açıldı: {{filePath}} (satır {{lineNumber}})"
+		}
 	}
 }

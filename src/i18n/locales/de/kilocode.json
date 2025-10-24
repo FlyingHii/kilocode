@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "Kann neue Änderungen nicht anzeigen, Checkpoints sind nicht verfügbar.",
 		"noChanges": "Kann neue Änderungen nicht anzeigen, keine Änderungen gefunden.",
 		"error": "Kann neue Änderungen nicht anzeigen, ein Fehler ist aufgetreten."
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "Datei '{{filePath}}' existiert nicht im Workspace.",
+			"tabNotFound": "Tab für Datei '{{filePath}}' ist derzeit nicht geöffnet.",
+			"invalidJsonFiles": "Ungültiges JSON-Format im 'files' Parameter: {{error}}",
+			"lineOutOfRange": "Zeilennummer {{lineNumber}} liegt außerhalb des gültigen Bereichs für die Datei '{{filePath}}' (max: {{maxLines}}).",
+			"openRequiresFile": "Aktion 'open' erfordert entweder den Parameter 'file' oder 'files'.",
+			"closeRequiresFile": "Aktion 'close' erfordert 'file' Parameter."
+		},
+		"success": {
+			"openedFileWithLine": "✓ Geöffnet: {{filePath}} (Zeile {{lineNumber}})",
+			"closedTab": "✓ Tab geschlossen: {{filePath}}",
+			"openedFile": "✓ Geöffnet: {{filePath}}",
+			"bulkOpenApproval": "{{count}} Dateien in Tabs öffnen: {{fileList}}"
+		}
 	}
 }

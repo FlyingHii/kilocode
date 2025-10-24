@@ -139,5 +139,21 @@
 		"checkpointsUnavailable": "لا يمكن عرض التغييرات الجديدة، نقاط الحفظ غير متاحة.",
 		"noChanges": "لا يمكن عرض التغييرات الجديدة، لم يتم العثور على أي تغييرات.",
 		"error": "لا يمكن عرض التغييرات الجديدة، حدث خطأ."
+	},
+	"manageTabs": {
+		"errors": {
+			"lineOutOfRange": "الخط رقم {{lineNumber}} خارج النطاق للملف '{{filePath}}' (الحد الأقصى: {{maxLines}}).",
+			"tabNotFound": "علامة التبويب للملف '{{filePath}}' غير مفتوحة حاليًا.",
+			"openRequiresFile": "الإجراء 'open' يتطلب إما معلمة 'file' أو 'files'.",
+			"fileNotFound": "الملف '{{filePath}}' غير موجود في مساحة العمل.",
+			"invalidJsonFiles": "تنسيق JSON غير صالح في معلمة 'files': {{error}}",
+			"closeRequiresFile": "يتطلب الإجراء 'close' المعلمة 'file'."
+		},
+		"success": {
+			"openedFile": "✓ تم فتح: {{filePath}}",
+			"closedTab": "✓ تم إغلاق التبويب: {{filePath}}",
+			"openedFileWithLine": "✓ فُتِح: {{filePath}} (السطر {{lineNumber}})",
+			"bulkOpenApproval": "فتح {{count}} ملفات في علامات تبويب: {{fileList}}"
+		}
 	}
 }

@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "Não é possível exibir novas alterações, pontos de verificação não estão disponíveis.",
 		"noChanges": "Não é possível exibir novas alterações, nenhuma alteração foi encontrada.",
 		"error": "Não é possível exibir novas alterações, ocorreu um erro."
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "O arquivo '{{filePath}}' não existe no espaço de trabalho.",
+			"lineOutOfRange": "A linha número {{lineNumber}} está fora do intervalo para o arquivo '{{filePath}}' (máx: {{maxLines}}).",
+			"tabNotFound": "A aba para o arquivo '{{filePath}}' não está atualmente aberta.",
+			"invalidJsonFiles": "Formato JSON inválido no parâmetro 'files': {{error}}",
+			"openRequiresFile": "A ação 'open' requer o parâmetro 'file' ou 'files'.",
+			"closeRequiresFile": "Ação 'close' requer o parâmetro 'file'."
+		},
+		"success": {
+			"openedFile": "✓ Aberto: {{filePath}}",
+			"openedFileWithLine": "✓ Aberto: {{filePath}} (linha {{lineNumber}})",
+			"bulkOpenApproval": "Abrir {{count}} arquivos em abas: {{fileList}}",
+			"closedTab": "✓ Aba fechada: {{filePath}}"
+		}
 	}
 }

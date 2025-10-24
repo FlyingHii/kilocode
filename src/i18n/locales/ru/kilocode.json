@@ -135,5 +135,21 @@
 		"checkpointsUnavailable": "Невозможно показать новые изменения, контрольные точки недоступны.",
 		"noChanges": "Невозможно показать новые изменения, изменения не найдены.",
 		"error": "Невозможно показать новые изменения, произошла ошибка."
+	},
+	"manageTabs": {
+		"errors": {
+			"fileNotFound": "Файл '{{filePath}}' не существует в рабочей области.",
+			"invalidJsonFiles": "Неверный формат JSON в параметре 'files': {{error}}",
+			"tabNotFound": "Вкладка для файла '{{filePath}}' в настоящий момент не открыта.",
+			"lineOutOfRange": "Строка номер {{lineNumber}} вне диапазона для файла '{{filePath}}' (макс.: {{maxLines}}).",
+			"openRequiresFile": "Действие 'open' требует параметр 'file' или 'files'.",
+			"closeRequiresFile": "Действие 'close' требует параметр 'file'."
+		},
+		"success": {
+			"openedFile": "✓ Открыт: {{filePath}}",
+			"openedFileWithLine": "✓ Открыто: {{filePath}} (строка {{lineNumber}})",
+			"closedTab": "✓ Закрыта вкладка: {{filePath}}",
+			"bulkOpenApproval": "Открыть {{count}} файлов во вкладках: {{fileList}}"
+		}
 	}
 }

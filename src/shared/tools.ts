@@ -66,6 +66,7 @@ export const toolParamNames = [
 	"instructions",
 	"code_edit",
 	"files",
+	"file",
 	// kilocode_change end
 	"args",
 	"start_line",
@@ -196,6 +197,14 @@ export interface GenerateImageToolUse extends ToolUse {
 	params: Partial<Pick<Record<ToolParamName, string>, "prompt" | "path" | "image">>
 }
 
+// kilocode_change start: Add manage_tabs tool
+export interface ManageTabsToolUse extends ToolUse {
+	name: "manage_tabs"
+	params: Required<Pick<Record<ToolParamName, string>, "action">> &
+		Partial<Pick<Record<ToolParamName, string>, "file" | "files">>
+}
+// kilocode_change end: Add manage_tabs tool
+
 // Define tool group configuration
 export type ToolGroupConfig = {
 	tools: readonly string[]
@@ -228,6 +237,7 @@ export const TOOL_DISPLAY_NAMES: Record<ToolName, string> = {
 	update_todo_list: "update todo list",
 	run_slash_command: "run slash command",
 	generate_image: "generate images",
+	manage_tabs: "manage tabs",
 } as const
 
 // Define available tool groups.
@@ -251,6 +261,7 @@ export const TOOL_GROUPS: Record<ToolGroup, ToolGroupConfig> = {
 			"search_and_replace",
 			"new_rule", // kilocode_change
 			"generate_image",
+			"manage_tabs",
 		],
 	},
 	browser: {
@@ -278,6 +289,7 @@ export const ALWAYS_AVAILABLE_TOOLS: ToolName[] = [
 	"condense", // kilocode_Change
 	"update_todo_list",
 	"run_slash_command",
+	"manage_tabs", // kilocode_change: Add manage_tabs tool to auto-approved tools
 ] as const
 
 export type DiffResult =

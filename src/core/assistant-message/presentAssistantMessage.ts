@@ -38,6 +38,7 @@ import { Task } from "../task/Task"
 import { newRuleTool } from "../tools/newRuleTool" // kilocode_change
 import { reportBugTool } from "../tools/reportBugTool" // kilocode_change
 import { condenseTool } from "../tools/condenseTool" // kilocode_change
+import { manageTabsTool } from "../tools/manageTabsTool" // kilocode_change
 import { codebaseSearchTool } from "../tools/codebaseSearchTool"
 import { experiments, EXPERIMENT_IDS } from "../../shared/experiments"
 import { applyDiffToolLegacy } from "../tools/applyDiffTool"
@@ -239,6 +240,8 @@ export async function presentAssistantMessage(cline: Task, recursionDepth: numbe
 						return `[${block.name}]`
 					case "condense":
 						return `[${block.name}]`
+					case "manage_tabs":
+						return `[${block.name} ${block.params.action}${block.params.file ? ` '${block.params.file}'` : ""}]`
 					// kilocode_change end
 					case "run_slash_command":
 						return `[${block.name} for '${block.params.command}'${block.params.args ? ` with args: ${block.params.args}` : ""}]`
@@ -584,6 +587,9 @@ export async function presentAssistantMessage(cline: Task, recursionDepth: numbe
 					break
 				case "condense":
 					await condenseTool(cline, block, askApproval, handleError, pushToolResult, removeClosingTag)
+					break
+				case "manage_tabs":
+					await manageTabsTool(cline, block, askApproval, handleError, pushToolResult, removeClosingTag)
 					break
 				// kilocode_change end
 				case "run_slash_command":
