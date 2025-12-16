@@ -228,7 +228,7 @@ const anthropicSchema = apiModelIdProviderModelSchema.extend({
 
 const claudeCodeSchema = apiModelIdProviderModelSchema.extend({
 	claudeCodePath: z.string().optional(),
-	claudeCodeMaxOutputTokens: z.number().int().min(1).max(200000).optional(),
+	claudeCodeMaxOutputTokens: z.int().min(1).max(200000).optional(),
 })
 
 const glamaSchema = baseProviderSettingsSchema.extend({
@@ -308,7 +308,7 @@ const ollamaSchema = baseProviderSettingsSchema.extend({
 	ollamaModelId: z.string().optional(),
 	ollamaBaseUrl: z.string().optional(),
 	ollamaApiKey: z.string().optional(),
-	ollamaNumCtx: z.number().int().min(128).optional(),
+	ollamaNumCtx: z.int().min(128).optional(),
 })
 
 const vsCodeLmSchema = baseProviderSettingsSchema.extend({
@@ -541,53 +541,53 @@ const defaultSchema = z.object({
 })
 
 export const providerSettingsSchemaDiscriminated = z.discriminatedUnion("apiProvider", [
-	anthropicSchema.merge(z.object({ apiProvider: z.literal("anthropic") })),
-	claudeCodeSchema.merge(z.object({ apiProvider: z.literal("claude-code") })),
-	glamaSchema.merge(z.object({ apiProvider: z.literal("glama") })),
-	nanoGptSchema.merge(z.object({ apiProvider: z.literal("nano-gpt") })), // kilocode_change
-	openRouterSchema.merge(z.object({ apiProvider: z.literal("openrouter") })),
-	bedrockSchema.merge(z.object({ apiProvider: z.literal("bedrock") })),
-	vertexSchema.merge(z.object({ apiProvider: z.literal("vertex") })),
-	openAiSchema.merge(z.object({ apiProvider: z.literal("openai") })),
-	ollamaSchema.merge(z.object({ apiProvider: z.literal("ollama") })),
-	vsCodeLmSchema.merge(z.object({ apiProvider: z.literal("vscode-lm") })),
-	lmStudioSchema.merge(z.object({ apiProvider: z.literal("lmstudio") })),
-	geminiSchema.merge(z.object({ apiProvider: z.literal("gemini") })),
-	openAiNativeSchema.merge(z.object({ apiProvider: z.literal("openai-native") })),
-	ovhcloudSchema.merge(z.object({ apiProvider: z.literal("ovhcloud") })), // kilocode_change
-	mistralSchema.merge(z.object({ apiProvider: z.literal("mistral") })),
-	deepSeekSchema.merge(z.object({ apiProvider: z.literal("deepseek") })),
-	deepInfraSchema.merge(z.object({ apiProvider: z.literal("deepinfra") })),
-	doubaoSchema.merge(z.object({ apiProvider: z.literal("doubao") })),
-	moonshotSchema.merge(z.object({ apiProvider: z.literal("moonshot") })),
-	minimaxSchema.merge(z.object({ apiProvider: z.literal("minimax") })),
-	unboundSchema.merge(z.object({ apiProvider: z.literal("unbound") })),
-	requestySchema.merge(z.object({ apiProvider: z.literal("requesty") })),
-	humanRelaySchema.merge(z.object({ apiProvider: z.literal("human-relay") })),
-	fakeAiSchema.merge(z.object({ apiProvider: z.literal("fake-ai") })),
-	xaiSchema.merge(z.object({ apiProvider: z.literal("xai") })),
+	anthropicSchema.extend(z.object({ apiProvider: z.literal("anthropic") }).shape),
+	claudeCodeSchema.extend(z.object({ apiProvider: z.literal("claude-code") }).shape),
+	glamaSchema.extend(z.object({ apiProvider: z.literal("glama") }).shape),
+	nanoGptSchema.extend(z.object({ apiProvider: z.literal("nano-gpt") }).shape), // kilocode_change
+	openRouterSchema.extend(z.object({ apiProvider: z.literal("openrouter") }).shape),
+	bedrockSchema.extend(z.object({ apiProvider: z.literal("bedrock") }).shape),
+	vertexSchema.extend(z.object({ apiProvider: z.literal("vertex") }).shape),
+	openAiSchema.extend(z.object({ apiProvider: z.literal("openai") }).shape),
+	ollamaSchema.extend(z.object({ apiProvider: z.literal("ollama") }).shape),
+	vsCodeLmSchema.extend(z.object({ apiProvider: z.literal("vscode-lm") }).shape),
+	lmStudioSchema.extend(z.object({ apiProvider: z.literal("lmstudio") }).shape),
+	geminiSchema.extend(z.object({ apiProvider: z.literal("gemini") }).shape),
+	openAiNativeSchema.extend(z.object({ apiProvider: z.literal("openai-native") }).shape),
+	ovhcloudSchema.extend(z.object({ apiProvider: z.literal("ovhcloud") }).shape), // kilocode_change
+	mistralSchema.extend(z.object({ apiProvider: z.literal("mistral") }).shape),
+	deepSeekSchema.extend(z.object({ apiProvider: z.literal("deepseek") }).shape),
+	deepInfraSchema.extend(z.object({ apiProvider: z.literal("deepinfra") }).shape),
+	doubaoSchema.extend(z.object({ apiProvider: z.literal("doubao") }).shape),
+	moonshotSchema.extend(z.object({ apiProvider: z.literal("moonshot") }).shape),
+	minimaxSchema.extend(z.object({ apiProvider: z.literal("minimax") }).shape),
+	unboundSchema.extend(z.object({ apiProvider: z.literal("unbound") }).shape),
+	requestySchema.extend(z.object({ apiProvider: z.literal("requesty") }).shape),
+	humanRelaySchema.extend(z.object({ apiProvider: z.literal("human-relay") }).shape),
+	fakeAiSchema.extend(z.object({ apiProvider: z.literal("fake-ai") }).shape),
+	xaiSchema.extend(z.object({ apiProvider: z.literal("xai") }).shape),
 	// kilocode_change start
-	geminiCliSchema.merge(z.object({ apiProvider: z.literal("gemini-cli") })),
-	kilocodeSchema.merge(z.object({ apiProvider: z.literal("kilocode") })),
-	virtualQuotaFallbackSchema.merge(z.object({ apiProvider: z.literal("virtual-quota-fallback") })),
-	syntheticSchema.merge(z.object({ apiProvider: z.literal("synthetic") })),
-	inceptionSchema.merge(z.object({ apiProvider: z.literal("inception") })),
+	geminiCliSchema.extend(z.object({ apiProvider: z.literal("gemini-cli") }).shape),
+	kilocodeSchema.extend(z.object({ apiProvider: z.literal("kilocode") }).shape),
+	virtualQuotaFallbackSchema.extend(z.object({ apiProvider: z.literal("virtual-quota-fallback") }).shape),
+	syntheticSchema.extend(z.object({ apiProvider: z.literal("synthetic") }).shape),
+	inceptionSchema.extend(z.object({ apiProvider: z.literal("inception") }).shape),
 	// kilocode_change end
-	groqSchema.merge(z.object({ apiProvider: z.literal("groq") })),
-	basetenSchema.merge(z.object({ apiProvider: z.literal("baseten") })),
-	huggingFaceSchema.merge(z.object({ apiProvider: z.literal("huggingface") })),
-	chutesSchema.merge(z.object({ apiProvider: z.literal("chutes") })),
-	litellmSchema.merge(z.object({ apiProvider: z.literal("litellm") })),
-	cerebrasSchema.merge(z.object({ apiProvider: z.literal("cerebras") })),
-	sambaNovaSchema.merge(z.object({ apiProvider: z.literal("sambanova") })),
-	zaiSchema.merge(z.object({ apiProvider: z.literal("zai") })),
-	fireworksSchema.merge(z.object({ apiProvider: z.literal("fireworks") })),
-	featherlessSchema.merge(z.object({ apiProvider: z.literal("featherless") })),
-	ioIntelligenceSchema.merge(z.object({ apiProvider: z.literal("io-intelligence") })),
-	qwenCodeSchema.merge(z.object({ apiProvider: z.literal("qwen-code") })),
-	rooSchema.merge(z.object({ apiProvider: z.literal("roo") })),
-	vercelAiGatewaySchema.merge(z.object({ apiProvider: z.literal("vercel-ai-gateway") })),
-	sapAiCoreSchema.merge(z.object({ apiProvider: z.literal("sap-ai-core") })), // kilocode_change
+	groqSchema.extend(z.object({ apiProvider: z.literal("groq") }).shape),
+	basetenSchema.extend(z.object({ apiProvider: z.literal("baseten") }).shape),
+	huggingFaceSchema.extend(z.object({ apiProvider: z.literal("huggingface") }).shape),
+	chutesSchema.extend(z.object({ apiProvider: z.literal("chutes") }).shape),
+	litellmSchema.extend(z.object({ apiProvider: z.literal("litellm") }).shape),
+	cerebrasSchema.extend(z.object({ apiProvider: z.literal("cerebras") }).shape),
+	sambaNovaSchema.extend(z.object({ apiProvider: z.literal("sambanova") }).shape),
+	zaiSchema.extend(z.object({ apiProvider: z.literal("zai") }).shape),
+	fireworksSchema.extend(z.object({ apiProvider: z.literal("fireworks") }).shape),
+	featherlessSchema.extend(z.object({ apiProvider: z.literal("featherless") }).shape),
+	ioIntelligenceSchema.extend(z.object({ apiProvider: z.literal("io-intelligence") }).shape),
+	qwenCodeSchema.extend(z.object({ apiProvider: z.literal("qwen-code") }).shape),
+	rooSchema.extend(z.object({ apiProvider: z.literal("roo") }).shape),
+	vercelAiGatewaySchema.extend(z.object({ apiProvider: z.literal("vercel-ai-gateway") }).shape),
+	sapAiCoreSchema.extend(z.object({ apiProvider: z.literal("sap-ai-core") }).shape), // kilocode_change
 	defaultSchema,
 ])
 

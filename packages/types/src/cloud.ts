@@ -78,6 +78,7 @@ export interface CloudOrganizationMembership {
 export const organizationAllowListSchema = z.object({
 	allowAll: z.boolean(),
 	providers: z.record(
+		z.string(),
 		z.object({
 			allowAll: z.boolean(),
 			models: z.array(z.string()).optional(),
@@ -107,15 +108,15 @@ export const organizationDefaultSettingsSchema = globalSettingsSchema
 		terminalZshClearEolMark: true,
 	})
 	// Add stronger validations for some fields.
-	.merge(
+	.extend(
 		z.object({
-			maxOpenTabsContext: z.number().int().nonnegative().optional(),
-			maxReadFileLine: z.number().int().gte(-1).optional(),
-			maxWorkspaceFiles: z.number().int().nonnegative().optional(),
-			terminalCommandDelay: z.number().int().nonnegative().optional(),
-			terminalOutputLineLimit: z.number().int().nonnegative().optional(),
-			terminalShellIntegrationTimeout: z.number().int().nonnegative().optional(),
-		}),
+			maxOpenTabsContext: z.int().nonnegative().optional(),
+			maxReadFileLine: z.int().gte(-1).optional(),
+			maxWorkspaceFiles: z.int().nonnegative().optional(),
+			terminalCommandDelay: z.int().nonnegative().optional(),
+			terminalOutputLineLimit: z.int().nonnegative().optional(),
+			terminalShellIntegrationTimeout: z.int().nonnegative().optional(),
+		}).shape,
 	)
 
 export type OrganizationDefaultSettings = z.infer<typeof organizationDefaultSettingsSchema>
@@ -127,7 +128,7 @@ export type OrganizationDefaultSettings = z.infer<typeof organizationDefaultSett
 export const organizationCloudSettingsSchema = z.object({
 	recordTaskMessages: z.boolean().optional(),
 	enableTaskSharing: z.boolean().optional(),
-	taskShareExpirationDays: z.number().int().positive().optional(),
+	taskShareExpirationDays: z.int().positive().optional(),
 	allowMembersViewAllTasks: z.boolean().optional(),
 })
 
@@ -387,7 +388,7 @@ export const INSTANCE_TTL_SECONDS = 60
 
 const extensionTaskSchema = z.object({
 	taskId: z.string(),
-	taskStatus: z.nativeEnum(TaskStatus),
+	taskStatus: z.enum(TaskStatus),
 	taskAsk: clineMessageSchema.optional(),
 	queuedMessages: z.array(queuedMessageSchema).optional(),
 	parentTaskId: z.string().optional(),

@@ -7,7 +7,7 @@ export const mcpParameterSchema = z.object({
 	name: z.string().min(1),
 	key: z.string().min(1),
 	placeholder: z.string().optional(),
-	optional: z.boolean().optional().default(false),
+	optional: z.boolean().optional().prefault(false),
 })
 
 export type McpParameter = z.infer<typeof mcpParameterSchema>
@@ -39,7 +39,7 @@ const baseMarketplaceItemSchema = z.object({
 	name: z.string().min(1, "Name is required"),
 	description: z.string(),
 	author: z.string().optional(),
-	authorUrl: z.string().url("Author URL must be a valid URL").optional(),
+	authorUrl: z.url("Author URL must be a valid URL").optional(),
 	tags: z.array(z.string()).optional(),
 	prerequisites: z.array(z.string()).optional(),
 })
@@ -54,7 +54,7 @@ export const modeMarketplaceItemSchema = baseMarketplaceItemSchema.extend({
 export type ModeMarketplaceItem = z.infer<typeof modeMarketplaceItemSchema>
 
 export const mcpMarketplaceItemSchema = baseMarketplaceItemSchema.extend({
-	url: z.string().url(), // Required url field
+	url: z.url(), // Required url field
 	content: z.union([z.string().min(1), z.array(mcpInstallationMethodSchema)]), // Single config or array of methods
 	parameters: z.array(mcpParameterSchema).optional(),
 })
@@ -81,7 +81,7 @@ export type MarketplaceItem = z.infer<typeof marketplaceItemSchema>
  * Installation options for marketplace items
  */
 export const installMarketplaceItemOptionsSchema = z.object({
-	target: z.enum(["global", "project"]).optional().default("project"),
+	target: z.enum(["global", "project"]).optional().prefault("project"),
 	parameters: z.record(z.string(), z.any()).optional(),
 })
 

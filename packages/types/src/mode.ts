@@ -23,7 +23,9 @@ export const groupOptionsSchema = z.object({
 					return false
 				}
 			},
-			{ message: "Invalid regular expression pattern" },
+			{
+				error: "Invalid regular expression pattern",
+			},
 		),
 	description: z.string().optional(),
 })
@@ -58,7 +60,9 @@ const groupEntryArraySchema = z.array(groupEntrySchema).refine(
 			return true
 		})
 	},
-	{ message: "Duplicate groups are not allowed" },
+	{
+		error: "Duplicate groups are not allowed",
+	},
 )
 
 export const modeConfigSchema = z.object({
@@ -94,7 +98,7 @@ export const customModesSettingsSchema = z.object({
 			})
 		},
 		{
-			message: "Duplicate mode slugs are not allowed",
+			error: "Duplicate mode slugs are not allowed",
 		},
 	),
 })

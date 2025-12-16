@@ -145,12 +145,7 @@ export const globalSettingsSchema = z.object({
 	cachedChromeHostUrl: z.string().optional(),
 
 	enableCheckpoints: z.boolean().optional(),
-	checkpointTimeout: z
-		.number()
-		.int()
-		.min(MIN_CHECKPOINT_TIMEOUT_SECONDS)
-		.max(MAX_CHECKPOINT_TIMEOUT_SECONDS)
-		.optional(),
+	checkpointTimeout: z.int().min(MIN_CHECKPOINT_TIMEOUT_SECONDS).max(MAX_CHECKPOINT_TIMEOUT_SECONDS).optional(),
 
 	// kilocode_change start - Auto-purge settings
 	autoPurgeEnabled: z.boolean().optional(),
