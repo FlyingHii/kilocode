@@ -1935,12 +1935,13 @@ export class AgentManagerProvider implements vscode.Disposable {
 			const streamUrl = cloudAgentService.getStreamUrl(prepareResponse.cloudAgentSessionId)
 			this.outputChannel.appendLine(`[AgentManager] Cloud session stream URL: ${streamUrl}`)
 
-			// Notify webview of successful cloud session start
-			this.postMessage({
-				type: "agentManager.cloudSessionStarted",
-				cloudAgentSessionId: prepareResponse.cloudAgentSessionId,
-				streamUrl,
-			})
+			// Redirect user to the web app to view the cloud session
+			const webAppUrl = `https://app.kilo.ai/sessions/${prepareResponse.cloudAgentSessionId}`
+			this.outputChannel.appendLine(`[AgentManager] Redirecting to web app: ${webAppUrl}`)
+			await vscode.env.openExternal(vscode.Uri.parse(webAppUrl))
+
+			// Notify webview that session started (resets loading state)
+			this.postMessage({ type: "agentManager.startSessionFailed" })
 
 			// Show success message
 			void vscode.window.showInformationMessage(t("kilocode:agentManager.info.cloudSessionStarted"))
