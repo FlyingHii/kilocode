@@ -1,7 +1,10 @@
+<<<<<<< Updated upstream
 /**
  * StatusBar component - displays project info, git branch, mode, model, and context usage
  */
 
+=======
+>>>>>>> Stashed changes
 import React, { useEffect, useMemo, useState } from "react"
 import { Box, Text } from "ink"
 import { useAtomValue } from "jotai"
@@ -31,9 +34,6 @@ import { isGitWorktree } from "../../utils/git.js"
 
 const MAX_MODEL_NAME_LENGTH = 40
 
-/**
- * Get the display name for the current model
- */
 function getModelDisplayName(apiConfig: ProviderSettings | null, routerModels: RouterModels | null): string {
 	if (!apiConfig || !apiConfig.apiProvider) return "N/A"
 
@@ -81,22 +81,13 @@ function getModelDisplayName(apiConfig: ProviderSettings | null, routerModels: R
 	}
 }
 
-/**
- * Get project name from workspace path
- */
 function getProjectName(cwd: string | null): string {
 	if (!cwd) return "N/A"
 	return path.basename(cwd)
 }
 
-/**
- * StatusBar component that displays current project status
- */
 export const StatusBar: React.FC = () => {
-	// Get theme
 	const theme = useTheme()
-
-	// Get data from atoms
 	const cwd = useAtomValue(cwdAtom)
 	const isParallelMode = useAtomValue(isParallelModeAtom)
 	const mode = useAtomValue(extensionModeAtom)
@@ -105,11 +96,12 @@ export const StatusBar: React.FC = () => {
 	const routerModels = useAtomValue(routerModelsAtom)
 	const yoloMode = useAtomValue(yoloModeAtom)
 
-	// Get git info
 	const gitInfo = useGitInfo(cwd)
-
-	// Calculate context usage
 	const contextUsage = useContextUsage(messages, apiConfig)
+<<<<<<< Updated upstream
+=======
+	const sessionCost = useSessionCost()
+>>>>>>> Stashed changes
 
 	const [isWorktree, setIsWorktree] = useState(false)
 
