@@ -382,7 +382,7 @@ Deploy application to production`,
 			handleModeSwitch: mockHandleModeSwitch,
 		})
 
-		vi.mocked(getCommand).mockResolvedValue(mockCommand)
+		vi.mocked(getWorkflow).mockResolvedValue(mockCommand)
 
 		await runSlashCommandTool.handle(mockTask as Task, block, mockCallbacks)
 
@@ -428,7 +428,7 @@ Start debugging the application`,
 			handleModeSwitch: mockHandleModeSwitch,
 		})
 
-		vi.mocked(getCommand).mockResolvedValue(mockCommand)
+		vi.mocked(getWorkflow).mockResolvedValue(mockCommand)
 
 		await runSlashCommandTool.handle(mockTask as Task, block, mockCallbacks)
 
@@ -464,7 +464,7 @@ Start debugging the application`,
 			handleModeSwitch: vi.fn(),
 		})
 
-		vi.mocked(getCommand).mockResolvedValue(mockCommand)
+		vi.mocked(getWorkflow).mockResolvedValue(mockCommand)
 
 		await runSlashCommandTool.handle(mockTask as Task, block, mockCallbacks)
 
