@@ -77,11 +77,14 @@ export const ExperimentalSettings = ({
 					.filter((config) => config[0] !== "MARKETPLACE") // kilocode_change: we have our own market place, filter this out for now
 					// Hide MULTIPLE_NATIVE_TOOL_CALLS - feature is on hold
 					.filter(([key]) => key !== "MULTIPLE_NATIVE_TOOL_CALLS")
+					// Hide WORKFLOW_DISCOVERY - use AUTO_EXECUTE_WORKFLOW instead // kilocode_change
+					.filter(([key]) => key !== "WORKFLOW_DISCOVERY") // kilocode_change
 					.map((config) => {
 						// Use the same translation key pattern as ExperimentalFeature
 						const experimentKey = config[0]
 						const label = t(`settings:experimental.${experimentKey}.name`)
 
+						// kilocode_change start: Special handling for experiments with custom components
 						if (config[0] === "MULTI_FILE_APPLY_DIFF") {
 							return (
 								<SearchableSetting
@@ -99,7 +102,6 @@ export const ExperimentalSettings = ({
 								</SearchableSetting>
 							)
 						}
-						// kilocode_change start
 						if (config[0] === "MORPH_FAST_APPLY") {
 							const enabled =
 								experiments[EXPERIMENT_IDS[config[0] as keyof typeof EXPERIMENT_IDS]] ?? false
@@ -191,6 +193,17 @@ export const ExperimentalSettings = ({
 								</SearchableSetting>
 							)
 						}
+						// kilocode_change end
+						// kilocode_change start: Skip experiments that have special handling above
+						// to prevent duplicates in the UI when conditions aren't met
+						if (
+							config[0] === "MULTI_FILE_APPLY_DIFF" ||
+							config[0] === "MORPH_FAST_APPLY" ||
+							config[0] === "IMAGE_GENERATION"
+						) {
+							return null
+						}
+						// kilocode_change end
 						return (
 							<SearchableSetting
 								key={config[0]}
